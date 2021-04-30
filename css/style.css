@@ -14,26 +14,115 @@ SUGESTÃO DE ESTRUTURAÇÃO BASE
 **** PÁGINA INICIAL
 */
 
+/*RESET*/
+body, header, h2, h3, section, div, ul, li, figure, img, figcaption, footer, button {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
 /* VARIÁVEIS */
-:root{
+:root {
   
 }
 
 /*BODY*/
 	body{
-
+		background-color: #141414;
+		font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 	}
 
 /*TOPO*/
-	header.topo{
-		
+
+	.topo {
+		height: 10vh;
+		padding: 1rem 3rem;
 	}
 
-/*RODAPÉ*/
+	.topo figure img {
+		height: 1.5rem;
+	}
 	
 
 /*PÁGINA INICIAL*/
-	div.pg-home{
-		
+
+	div.pg-home {
+		height: 90vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		/* align-content: center; */
 	}
 
+	div.pg-home section{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	div.pg-home #pg-home__titulo{
+		font-size: 4rem;
+		font-weight: 100;
+		color: white;
+	}
+
+
+	/*USUARIOS*/
+	ul {
+		margin: 1.5rem 0 5rem 0;
+		display: flex;
+		justify-content: space-between;
+		width: 858px;
+	}
+
+
+	li {
+		width: 186px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.foto {
+		width: 186px;
+		height: 186px;
+
+		/*CENTRALIZAR O '+'*/
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.nome-usuario {
+		margin: 0.5rem;
+		color: gray;
+		font-weight: 100;
+	}
+
+	/*HOVER*/
+	li:hover {
+		cursor: pointer;
+	}
+	li:hover .foto {
+		border: 2px solid white;
+	}
+	li:hover .nome-usuario {
+		color: white;
+	}
+
+
+	/*RODAPÉ*/
+	button {
+		font-size: 1rem;
+		text-transform: uppercase;
+		color: gray;
+		border: 1px solid gray;
+		background-color: transparent;
+		padding: 0.5rem 1rem;
+	}
+	button:hover {
+		color: white;
+		border-color: white;
+		cursor: pointer;
+	}
