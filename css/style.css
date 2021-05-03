@@ -37,11 +37,15 @@ body, header, h2, h3, section, div, ul, li, figure, img, figcaption, footer, but
 
 	.topo {
 		height: 10vh;
-		padding: 1rem 3rem;
+		width: 100vw;
+		padding: 10px 40px;
+
+		display: flex;
+		justify-content: center;
 	}
 
 	.topo figure img {
-		height: 1.5rem;
+		height: 20px;
 	}
 	
 
@@ -52,17 +56,18 @@ body, header, h2, h3, section, div, ul, li, figure, img, figcaption, footer, but
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		/* align-content: center; */
 	}
 
 	div.pg-home section{
 		display: flex;
+		height: 100%;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
 	}
 
-	div.pg-home #pg-home__titulo{
-		font-size: 4rem;
+	div.pg-home #pg-home__titulo {
+		font-size: 1.5rem;
 		font-weight: 100;
 		color: white;
 	}
@@ -70,45 +75,47 @@ body, header, h2, h3, section, div, ul, li, figure, img, figcaption, footer, but
 
 	/*USUARIOS*/
 	ul {
-		margin: 1.5rem 0 5rem 0;
+		margin: 50px 0 50px 0;
 		display: flex;
-		justify-content: space-between;
-		width: 858px;
+		justify-content: center;
+		flex-wrap: wrap;
+		width: 100vw;
 	}
 
 
 	li {
-		width: 186px;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		justify-content: center;
+		align-items: center; 
+		width: 40%;
 	}
 
 	.foto {
-		width: 186px;
-		height: 186px;
+		width: 20vw;
+		height: 20vw;
 
 		/*CENTRALIZAR O '+'*/
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
+	.foto:last-of-type img{
+		width: 25vw;
+		height: 25vw;
+		margin-bottom: 15px;
+	}
 
 	.nome-usuario {
-		margin: 0.5rem;
+		margin: 10px;
 		color: gray;
 		font-weight: 100;
 	}
-
-	/*HOVER*/
-	li:hover {
-		cursor: pointer;
-	}
-	li:hover .foto {
-		border: 2px solid white;
-	}
-	li:hover .nome-usuario {
-		color: white;
+	li:last-child .nome-usuario{
+		visibility: hidden;
+		margin: 0;
+		width: 0;
+		height: 0;
 	}
 
 
@@ -125,4 +132,77 @@ body, header, h2, h3, section, div, ul, li, figure, img, figcaption, footer, but
 		color: white;
 		border-color: white;
 		cursor: pointer;
+	}
+
+	@media (max-width: 768px) and (orientation: landscape) {
+		div.pg-home #pg-home__titulo {
+			visibility: hidden;
+		}
+
+		ul {
+			margin: 0;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			align-items: center;
+		}
+
+		li {
+			width: initial;
+		}
+
+		.foto {
+			width: 20vh;
+			height: 20vh;
+		}
+		.foto:last-of-type img{
+			width: 20vh;
+			height: 20vh;
+			align-self: flex-end;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.topo {
+			justify-content: flex-start;
+		}
+
+		div.pg-home #pg-home__titulo {
+			font-size: 4rem;
+		}
+
+
+		.foto {
+			width: 186px;
+			height: 186px;
+		}
+		
+		.foto:last-of-type img{
+			width: initial;
+			height: initial;
+			margin-bottom: 0;
+		}
+
+		li:last-child .nome-usuario{
+			visibility: initial;
+			margin: 10px;
+			width: initial;
+			height: initial;
+		}
+
+		ul {
+			flex-wrap: nowrap;
+			width: 858px;
+			margin: 30px 0 80px 0;
+		}
+
+		/*HOVER*/
+		li:hover {
+			cursor: pointer;
+		}
+		li:hover .foto {
+			border: 2px solid white;
+		}
+		li:hover .nome-usuario {
+			color: white;
+		}
 	}
